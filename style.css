@@ -1,0 +1,409 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #8b9a8b;
+    --text-dark: #333;
+    --text-light: #666;
+    --background-light: #f5f5f5;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background_pic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transform: scaleX(-1);
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--white);
+    padding: 20px;
+}
+
+.couple-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    font-weight: 400;
+    margin-top: 5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--white);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    letter-spacing: 0.2rem;
+}
+
+/* Invitation Section */
+#invitation {
+    background: var(--white);
+}
+
+.invitation-text {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Countdown Timer */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-number {
+    background: var(--primary-color);
+    color: var(--white);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+/* Buttons */
+.btn-calendar,
+.btn-location {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-calendar:hover,
+.btn-location:hover {
+    background: #73856e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-icon {
+    margin-right: 8px;
+}
+
+/* Event Sections */
+#ceremony,
+#celebration {
+    background: var(--background-light);
+}
+
+#ceremony {
+    background: var(--white);
+}
+
+.event-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.event-location {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.event-date-intro {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.event-datetime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 3rem 0;
+}
+
+.event-date,
+.event-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date-number,
+.time-number {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+.date-month,
+.time-period {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+}
+
+.event-divider {
+    width: 2px;
+    height: 60px;
+    background: var(--primary-color);
+}
+
+.event-address {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin: 2rem 0;
+}
+
+/* Dress Code Section */
+#dresscode {
+    background: var(--white);
+}
+
+.dresscode-icon {
+    margin: 0 auto 1.5rem;
+}
+
+.dresscode-type {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.dresscode-message {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* RSVP Section */
+#rsvp {
+    background: var(--background-light);
+}
+
+.rsvp-text {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: var(--white);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-whatsapp:hover {
+    background: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.closing-message {
+    margin-top: 4rem;
+}
+
+.closing-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.closing-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .countdown-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .event-datetime {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-divider {
+        width: 60px;
+        height: 2px;
+    }
+
+    .date-number,
+    .time-number {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-names {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        gap: 15px;
+    }
+
+    .countdown-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .btn-calendar,
+    .btn-location {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
