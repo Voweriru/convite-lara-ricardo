@@ -14,7 +14,7 @@ function personalizeInvitation() {
 
     if (guestName) {
         const decodedName = decodeURIComponent(guestName);
-        document.getElementById('invitation-title').textContent = `${decodedName}, você está convidado!`;
+        document.getElementById('invitation-title').textContent = `${decodedName}, você está convidado/a!`;
     }
 }
 
